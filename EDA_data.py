@@ -105,8 +105,10 @@ def run_eda():
     plt.tight_layout()
     spending_plot_path = os.path.join(script_dir, "spending_distribution.png")
     plt.savefig(spending_plot_path)
-    plt.close()
     print(f"- Saved spending distribution plot to: {spending_plot_path}")
+    print("Displaying Spending Distribution graph (close the window to proceed)...")
+    plt.show()
+    plt.close()
     
     # Plot 2: Correlation Heatmap using plt.imshow
     plt.figure(figsize=(7, 6))
@@ -132,8 +134,10 @@ def run_eda():
     plt.tight_layout()
     heatmap_plot_path = os.path.join(script_dir, "correlation_heatmap.png")
     plt.savefig(heatmap_plot_path)
-    plt.close()
     print(f"- Saved correlation heatmap to: {heatmap_plot_path}")
+    print("Displaying Correlation Heatmap graph (close the window to proceed)...")
+    plt.show()
+    plt.close()
     
     # Plot 3: Age Boxplot (showing outliers)
     plt.figure(figsize=(8, 4))
@@ -146,8 +150,10 @@ def run_eda():
     plt.tight_layout()
     age_plot_path = os.path.join(script_dir, "age_boxplot.png")
     plt.savefig(age_plot_path)
-    plt.close()
     print(f"- Saved age boxplot to: {age_plot_path}")
+    print("Displaying Age Box Plot graph (close the window to proceed)...")
+    plt.show()
+    plt.close()
     
     # Plot 4: City-wise Average Spending Bar Chart
     plt.figure(figsize=(10, 5))
@@ -173,8 +179,10 @@ def run_eda():
     plt.tight_layout()
     city_plot_path = os.path.join(script_dir, "city_spending.png")
     plt.savefig(city_plot_path)
-    plt.close()
     print(f"- Saved city spending plot to: {city_plot_path}")
+    print("Displaying City Spending graph (close the window to complete)...")
+    plt.show()
+    plt.close()
     
     print("\nEDA Completed successfully!")
     print("=" * 60)
