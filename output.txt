@@ -1,0 +1,101 @@
+============================================================
+1. LOADING DATASET
+============================================================
+Dataset successfully loaded. Shape: 50 rows, 5 columns.
+
+--- First 5 Rows ---
+   Customer_ID   Age         City  Spending  Visits_Per_Month
+0            1  29.0       Boston     450.0               2.0
+1            2  45.0      Seattle    1200.0               8.0
+2            3   NaN     New York     800.0               5.0
+3            4  33.0      Chicago     600.0               NaN
+4            5  61.0  Los Angeles    1500.0              10.0
+
+--- Dataset Info ---
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 50 entries, 0 to 49
+Data columns (total 5 columns):
+ #   Column            Non-Null Count  Dtype  
+---  ------            --------------  -----  
+ 0   Customer_ID       50 non-null     int64  
+ 1   Age               46 non-null     float64
+ 2   City              50 non-null     object 
+ 3   Spending          46 non-null     float64
+ 4   Visits_Per_Month  48 non-null     float64
+dtypes: float64(3), int64(1), object(1)
+memory usage: 2.1+ KB
+None
+
+============================================================
+2. IDENTIFYING MISSING VALUES
+============================================================
+Missing value counts per column:
+Customer_ID         0
+Age                 4
+City                0
+Spending            4
+Visits_Per_Month    2
+dtype: int64
+
+============================================================
+3. DATA IMPUTATION / CLEANING
+============================================================
+- Imputed missing Age values using median age: 38.0
+- Imputed missing Spending values using mean spending: $1421.74
+- Imputed missing Visits_Per_Month values using median visits: 5.0
+
+Verify missing values after imputation:
+Customer_ID         0
+Age                 0
+City                0
+Spending            0
+Visits_Per_Month    0
+dtype: int64
+
+============================================================
+4. OUTLIER DETECTION
+============================================================
+Found 3 age outliers (> 100 years):
+    Customer_ID    Age         City  Spending
+6             7  110.0      Houston    8000.0
+20           21  115.0      Houston    7500.0
+39           40  120.0  Los Angeles    9000.0
+
+Found 3 spending outliers (outside range $-488.86 to $2568.10):
+    Customer_ID    Age         City  Spending
+6             7  110.0      Houston    8000.0
+20           21  115.0      Houston    7500.0
+39           40  120.0  Los Angeles    9000.0
+
+============================================================
+5. DESCRIPTIVE STATISTICS
+============================================================
+       Customer_ID         Age     Spending  Visits_Per_Month
+count     50.00000   50.000000    50.000000         50.000000
+mean      25.50000   43.220000  1421.739130          5.360000
+std       14.57738   21.289348  1776.884805          2.812218
+min        1.00000   22.000000   300.000000          1.000000
+25%       13.25000   30.000000   657.500000          3.000000
+50%       25.50000   38.000000   950.000000          5.000000
+75%       37.75000   48.750000  1421.739130          7.000000
+max       50.00000  120.000000  9000.000000         12.000000
+
+============================================================
+6. CORRELATION ANALYSIS (Numeric Columns)
+============================================================
+                  Customer_ID       Age  Spending  Visits_Per_Month
+Customer_ID          1.000000 -0.014434 -0.005888          0.074674
+Age                 -0.014434  1.000000  0.937245          0.153406
+Spending            -0.005888  0.937245  1.000000         -0.122173
+Visits_Per_Month     0.074674  0.153406 -0.122173          1.000000
+
+============================================================
+7. GENERATING VISUAL PLOTS (using Matplotlib)
+============================================================
+- Saved spending distribution plot to: /home/student/Documents/project2/spending_distribution.png
+- Saved correlation heatmap to: /home/student/Documents/project2/correlation_heatmap.png
+- Saved age boxplot to: /home/student/Documents/project2/age_boxplot.png
+- Saved city spending plot to: /home/student/Documents/project2/city_spending.png
+
+EDA Completed successfully!
+============================================================
